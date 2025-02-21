@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Running Pace Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h2>Running Pace Calculator</h2>
+            <p>Enter data in two of the three fields in order to calculate the data for the remaining field.</p>
+        </div>
+
+        <div class="time section">
+            <label>Time (hh:mm:ss)</label><br>
+            <input type="number" id="time-hours" placeholder="h" oninput="showResetButton()"> :
+            <input type="number" id="time-minutes" placeholder="m" oninput="showResetButton()"> :
+            <input type="number" id="time-seconds" placeholder="s" oninput="showResetButton()">
+        </div>
+
+        <div class="distance section">
+            <label>Distance</label><br>
+        
+            <!-- Dropdown for predefined race distances -->
+            <select id="race-distance" onchange="setDistance()">
+                <option value="">Select a race distance</option>
+                <option value="3.1">5K</option>
+                <option value="6.2">10K</option>
+                <option value="13.1">Half-Marathon</option>
+                <option value="26.2">Marathon</option>
+                <option value="other">Other</option> <!-- Custom distance option -->
+            </select>
+        
+            <!-- Manual distance input (Initially Hidden) -->
+            <input type="number" id="distance-amount" placeholder="Enter distance" oninput="showResetButton()" style="display: none; margin-left: 10px; width: 150px;">
+        </div>
+        
+
+        <div class="pace section">
+            <label>Pace (mm:ss)</label><br>
+            <input type="number" id="pace-minutes" placeholder="mm" oninput="showResetButton()"> :
+            <input type="number" id="pace-seconds" placeholder="ss" oninput="showResetButton()">
+        </div>
+
+        <button id="calculate-button" onclick="calculate.missingField()">Calculate</button>
+        <button id="reset-button" onclick="resetFields()" style="display: none;">
+            <!-- Source attribution 
+            <a href="https://www.flaticon.com/free-icons/reset" title="reset icons"></a>
+            --> 
+            <img src="/images/circular.png">
+            Reset
+        </button>
+
+    </div>
+
+    <!-- Modal Window -->
+    <div id="modal-window" class="modal">
+        <p id="modal-message"></p>
+        <button onclick="modal.close()">Close</button>
+    </div>
+
+    <script src="script.js"></script>        
+
+</body>
+</html>

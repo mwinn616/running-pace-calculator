@@ -1,0 +1,141 @@
+
+.montserrat {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+  }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin: 20px;
+    background-color: antiquewhite;
+}
+.container {
+    margin: auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 650px;
+    height: 100vh;
+}
+
+.container > .section {
+   display: block;
+   margin-bottom: 16px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    gap: 8px;
+}
+
+.distance .section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+select {
+    padding: 5px;
+    font-size: 16px;
+}
+
+input {
+    width: 80px;
+    height: 25px;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #e2e2e2;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+input:focus {
+    border-color: rgb(31, 40, 87) ;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+#distance-amount {
+    padding: 5px;
+    font-size: 16px;
+    display: none;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+    background-color: rgb(31, 40, 87);
+}
+
+button:active {
+    transform: scale(.99);
+}
+
+
+img {
+    height: 15px;
+    width: 15px;
+    color: rgb(31, 40, 87);
+}
+
+#race-distance {
+    background-color: #e2e2e2;
+    height: 40px;
+    width: 350px;
+    border-radius: 10px;
+    margin-top: 8px;
+    border: none;
+    font-family: inherit;
+}
+
+#reset-button {
+    background-color: inherit;
+    color: rgb(31, 40, 87);
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+#reset-button:hover {
+   color: rgb(13, 16, 36);
+}
+
+#calculate-button:hover {
+    background-color: rgb(23, 30, 65); /* Darker shade on hover */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+.time.section input {
+    width: 20%;
+}
+
+}
